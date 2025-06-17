@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time-Based Image Display Webpage</title>
+    </head>
+    <body>
+        <!--HTML basic info-->
+        <p>First & Last Name: Patricia Chung</p>
+        <p>Course Name: COP4813 Web Applications Programming</p>
+        <p>Major: Computer Science BS</p>
+        <p>Welcome to my Time-Based Image Display Webpage!</p>
+
+        <!--display img based on current time-->
+        <img id="timeImage" src="" alt="Time of Day Image">
+
+        <!--javascript code to change the image-->
+        <script>
+            // FUNCTION: update img based on current user time
+            function updateImage() {
+                // get current time
+                const hour = new Date().getHours();
+                // get the correct img tag
+                const image = document.getElementById("timeImage");
+            
+                if (hour >= 6 && hour < 12) {
+                    image.src = "images/breakfast.jpg";
+                } else if (hour >= 12 && hour < 18) {
+                    image.src = "images/lunch.jpg";
+                } else {
+                    image.src = "images/dinner.jpg";
+                }
+            }
+            
+            updateImage();
+        </script>
+    </body>
+</html>
